@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>spam-check | por que meu email cai no spam</title>
+    <link rel="stylesheet" href="/estilo.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="identidade">
+        <h1>spam-check</h1>
+        <p>
+          Digite o domínio e veja o que explica o email cair no spam. A leitura é feita no DNS público, sem
+          cadastro, sem painel e sem enviar email nenhum.
+        </p>
+      </div>
+
+      <form id="form" class="barra" autocomplete="off">
+        <input
+          id="dominio"
+          name="dominio"
+          type="text"
+          inputmode="url"
+          spellcheck="false"
+          placeholder="exemplo.com"
+          aria-label="Domínio"
+        />
+        <button type="submit" id="verificar">Verificar</button>
+      </form>
+
+      <div class="atalhos">
+        <span>testar com</span>
+        <button type="button" data-dominio="example.com">example.com</button>
+        <button type="button" data-dominio="gmail.com">gmail.com</button>
+        <button type="button" data-dominio="iana.org">iana.org</button>
+      </div>
+
+      <div id="status" class="status" hidden></div>
+    </header>
+
+    <main id="painel" hidden>
+      <div id="acoes" class="acoes"></div>
+      <div id="resultado" class="resultado"></div>
+    </main>
+
+    <footer id="rodape" class="rodape"></footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "spam-check",
+  "version": "1.0.0",
+  "description": "Local page and command line to find out why your email goes to spam: SPF, DKIM, DMARC, MX and blocklists, from DNS alone.",
+  "type": "module",
+  "license": "MIT",
+  "author": "https://robertlogan.cc",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.servidor.json && tsc -p tsconfig.navegador.json",
+    "start": "npm run build && node dist/servidor/index.js",
+    "dev": "npm run start",
+    "checar": "npm run build && node dist/servidor/cli.js",
+    "test": "npm run build && node --test \"dist/test/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}
